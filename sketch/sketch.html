@@ -1,0 +1,93 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>SpaceX API - Web Application</title>
+    <meta name="description"
+        content="A typescript web application that displays SpaceX launches using their public API">
+    <meta name="author" content="Edward Cant">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div class="header-bar">
+        <img src="../assets/spacex-logo.png" class="header-bar__logo" />
+        <span class="header-bar__label">LAUNCHES</span>
+
+        <div class="reload-button">
+            Reload Data
+            <img class="button-icon" src="../assets/icon/refresh.png" />
+        </div>
+    </div>
+
+    <div class="main">
+
+        <div class="main__graphic-container">
+            <img src="../assets/img/launch-home.png" class="main__graphic" />
+        </div>
+
+        <div class="main__launch-list">
+            <div class="main__sorting-controls">
+                <div class="regular-button">
+                    Filter by Year
+                    <img class="button-icon" src="../assets/icon/select.png" />
+                </div>
+                <div class="regular-button">
+                    Sort Descending
+                    <img class="button-icon" src="../assets/icon/sort.png" />
+                </div>
+            </div>
+            <ul>
+                <li>
+                    <div class="item">
+                        <span class="item__number">#1</span>
+                        <span class="item__name">FalconSat</span>
+                        <div class="item__subinfo">
+                            <span class="item__date">24th Mar 2006</span>
+                            <span class="item__ship">Falcon 1</span>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="item">
+                        <span class="item__number">#2</span>
+                        <span class="item__name">DemoSat</span>
+                        <div class="item__subinfo">
+                            <span class="item__date">24th Mar 2006</span>
+                            <span class="item__ship">Falcon 3</span>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="item">
+                        <span class="item__number">#3</span>
+                        <span class="item__name">Trailblazer</span>
+                        <div class="item__subinfo">
+                            <span class="item__date">24th Mar 2006</span>
+                            <span class="item__ship">Falcon 5</span>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="item">
+                        <span class="item__number">#4</span>
+                        <span class="item__name">RatSat</span>
+                        <div class="item__subinfo">
+                            <span class="item__date">24th Mar 2006</span>
+                            <span class="item__ship">Falcon 9</span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,195 @@
+/*
+$primary-blue: #215184;
+$font-color: #545454;
+$font-family: 'Brandon Grotesque', Arial, Helvetica, sans-serif;
+*/
+
+@font-face {
+    font-family: 'Brandon Grotesque';
+    src: url('../assets/font/BrandonGrotesque-Bold.woff2') format('woff2'), url('../assets/font/BrandonGrotesque-Bold.woff') format('woff'), url('../assets/font/BrandonGrotesque-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Brandon Grotesque';
+    src: url('../assets/font/BrandonGrotesque-Regular.woff2') format('woff2'), url('../assets/font/BrandonGrotesque-Regular.woff') format('woff'), url('../assets/font/BrandonGrotesque-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Brandon Grotesque';
+    src: url('../assets/font/BrandonGrotesque-RegularItalic.woff2') format('woff2'), url('../assets/font/BrandonGrotesque-RegularItalic.woff') format('woff'), url('../assets/font/BrandonGrotesque-RegularItalic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Brandon Grotesque';
+    src: url('../assets/font/BrandonGrotesque-Black.woff2') format('woff2'), url('../assets/font/BrandonGrotesque-Black.woff') format('woff'), url('../assets/font/BrandonGrotesque-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Brandon Grotesque';
+    src: url('../assets/font/BrandonGrotesque-Medium.woff2') format('woff2'), url('../assets/font/BrandonGrotesque-Medium.woff') format('woff'), url('../assets/font/BrandonGrotesque-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Brandon Grotesque', Arial, Helvetica, sans-serif;
+    color: #545454;
+
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+/* Header */
+
+.header-bar {
+    /* recover some padding after removing the margin from body */
+    padding-left: 8px;
+}
+
+img.header-bar__logo {
+    height: 18px;
+    margin-right: -18px;
+    /*
+     * Using a negative margin here to make the flick of the X 
+     * go over the LAUNCHES label
+     */
+}
+
+span.header-bar__label {
+    font-family: 'Brandon Grotesque', Arial, Helvetica, sans-serif;
+    font-size: 0.8em;
+}
+
+/* Buttons */
+
+.reload-button {
+    display: inline;
+    float: right;
+
+    padding: 4px 4px 4px 8px;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+
+    background-color: #215184;
+
+    color: white;
+    font-family: 'Brandon Grotesque';
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+.button-icon {
+    display: inline;
+    width: 10px;
+
+    /* move the icons down a little bit so they are aligned with the text correctly */
+    position: relative;
+    top: 3px;
+    
+    padding: 2px;
+}
+
+.regular-button {
+    display: inline;
+    background: #215184;
+
+    color: white;
+    font-family: 'Brandon Grotesque';
+    font-size: 0.8em;
+    font-weight: bold;
+
+    border: 0px;
+    padding: 10px;
+    margin: 5px;
+}
+
+/* Main flexbox container, holding the graphic and the list */
+
+.main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    margin: 25px;
+
+    outline: 0px solid blue;
+}
+
+.main__graphic-container {
+    flex-basis: 100%;
+    padding: 15px;
+}
+
+.main__graphic {
+    width: 100%;
+
+    outline: 0px solid green;
+}
+
+.main__launch-list {
+    flex-basis: 100%;
+    padding: 15px;
+
+    outline: 0px solid red;
+}
+
+.main__sorting-controls {
+    text-align: right;
+}
+
+/* List items */
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.item {
+    background-color: white;
+    
+    padding: 18px;
+    margin: 8px;
+    border-radius: 5px;
+    box-shadow: 3px 2px 13px 0px rgba(0,0,0,0.3);
+
+    overflow: auto;
+}
+
+.item__number {
+    display: inline-block;
+    width: 64px;
+
+    font-weight: 500;
+    font-size: 1.8em;
+}
+
+.item__name {
+    font-weight: 500;
+    font-size: 1.8em;
+}
+
+.item__subinfo {
+    float: right;
+    display: flex;
+    flex-direction: column;
+
+    text-align: right;
+}
+
+.item__date {
+    font-weight: normal;
+    font-size: 0.8em;
+}
+
+.item__ship {
+    font-weight: bold;
+    font-size: 1.1em;
+}
