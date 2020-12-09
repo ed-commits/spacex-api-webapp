@@ -76,47 +76,9 @@ span.header-bar__label {
   font-size: 0.8em;
 }
 
-/* Buttons */
-
-.reload-button {
-  display: inline;
-  float: right;
-
-  padding: 4px 4px 4px 8px;
-  border-top-left-radius: 15px;
-  border-bottom-left-radius: 15px;
-
-  background-color: #215184;
-
-  color: white;
-  font-family: 'Brandon Grotesque';
-  font-size: 0.8em;
-  font-weight: bold;
-}
-
-.button-icon {
-  display: inline;
-  width: 10px;
-
-  /* move the icons down a little bit so they are aligned with the text correctly */
-  position: relative;
-  top: 3px;
-  
-  padding: 2px;
-}
-
-.regular-button {
-  display: inline;
-  background: #215184;
-
-  color: white;
-  font-family: 'Brandon Grotesque';
-  font-size: 0.8em;
-  font-weight: bold;
-
-  border: 0px;
-  padding: 10px;
-  margin: 5px;
+header {
+  padding-left: 20px;
+  padding-top: 10px;
 }
 
 /* Main flexbox container, holding the graphic and the list */
