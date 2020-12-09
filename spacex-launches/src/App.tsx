@@ -6,9 +6,15 @@ import { LaunchItem } from './components/LaunchItem';
 import spacexLogo from './assets/spacex-logo.png';
 import launchHome from './assets/img/launch-home.png';
 
-import refreshIcon from './assets/icon/refresh.png';
-import selectIcon from './assets/icon/select.png';
-import sortIcon from './assets/icon/sort.png';
+
+//import refreshIconImage from './assets/icon/refresh.png';
+//import selectIconImage from './assets/icon/select.png';
+//import sortIconImage from './assets/icon/sort.png';
+import RefreshIcon from '@material-ui/icons/Replay';
+import SelectIcon from '@material-ui/icons/ArrowDropDown';
+import SortIcon from '@material-ui/icons/ImportExport';
+
+import Button from '@material-ui/core/Button';
 
 function App() {
   return (
@@ -17,10 +23,12 @@ function App() {
         <img src={spacexLogo} className="header-bar__logo" alt="logo" />
         <span className="header-bar__label">LAUNCHES</span>
 
-        <div className="reload-button">
-          Reload Data
-            <img className="button-icon" src={refreshIcon} alt="refresh" />
-        </div>
+        <Button
+          variant="contained"
+          //className={classes.button}
+          endIcon={<RefreshIcon />}
+        >Reload Data</Button>
+
       </header>
 
       <div className="main">
@@ -29,14 +37,16 @@ function App() {
         </div>
         <div className="main__launch-list">
           <div className="main__sorting-controls">
-            <div className="regular-button">
-              Filter by Year
-            <img className="button-icon" src={selectIcon} alt="select" />
-            </div>
-            <div className="regular-button">
-              Sort Descending
-            <img className="button-icon" src={sortIcon} alt="sort" />
-            </div>
+            <Button
+              variant="contained"
+              //className={classes.button}
+              endIcon={<SelectIcon />}
+            >Filter by Year</Button>
+            <Button
+              variant="contained"
+              //className={classes.button}
+              endIcon={<SortIcon />}
+            >Sort Descending</Button>
           </div>
           <ul>
             <li>
