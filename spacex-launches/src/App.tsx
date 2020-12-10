@@ -16,6 +16,9 @@ import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
 
+import { processSpaceXAPIItem, processSpaceXAPI } from './SpaceXAPI';
+import { spaceXTestData } from './SpaceXAPITestData';
+
 const useStyles = makeStyles((theme) => ({
   button: {
     margin: theme.spacing(1),
@@ -40,20 +43,7 @@ const useStyles = makeStyles((theme) => ({
 function App() {
   const classes = useStyles();
 
-  const [launchList, setLaunchList] = useState<LaunchProps[]>([
-    {
-      number: 1,
-      name: "FalconSat",
-      date: new Date("24 Mar 2006"),
-      ship: "Falcon 1",
-    },
-    {
-      number: 2,
-      name: "FalconSat",
-      date: new Date("24 Mar 2007"),
-      ship: "Falcon 2",
-    }
-  ]);
+  const [launchList, setLaunchList] = useState<LaunchProps[]>(processSpaceXAPI(spaceXTestData));
 
   return (
     <div className="App">
