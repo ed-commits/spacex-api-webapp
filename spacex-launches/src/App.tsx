@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState } from 'react';
 import './App.scss';
 
 import { LaunchProps, LaunchItem } from './components/LaunchItem';
@@ -36,23 +37,23 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-let launchList: Array<LaunchProps> = [
-  {
-    number: 1,
-    name: "FalconSat",
-    date: new Date("24 Mar 2006"),
-    ship: "Falcon 1",
-  },
-  {
-    number: 2,
-    name: "FalconSat",
-    date: new Date("24 Mar 2007"),
-    ship: "Falcon 2",
-  }
-];
-
 function App() {
   const classes = useStyles();
+
+  const [launchList, setLaunchList] = useState<LaunchProps[]>([
+    {
+      number: 1,
+      name: "FalconSat",
+      date: new Date("24 Mar 2006"),
+      ship: "Falcon 1",
+    },
+    {
+      number: 2,
+      name: "FalconSat",
+      date: new Date("24 Mar 2007"),
+      ship: "Falcon 2",
+    }
+  ]);
 
   return (
     <div className="App">
