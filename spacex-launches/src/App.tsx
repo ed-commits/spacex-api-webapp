@@ -5,12 +5,12 @@ import './App.scss';
 import { LaunchProps } from './components/LaunchItem';
 import { LaunchList } from './components/LaunchList';
 import { SortButton } from './components/SortButton';
+import { FilterDialog } from './components/FilterDialog';
 
 import spacexLogo from './assets/spacex-logo.png';
 import launchHome from './assets/img/launch-home.png';
 
 import RefreshIcon from '@material-ui/icons/Replay';
-//import SelectIcon from '@material-ui/icons/ArrowDropDown';
 //import SortIcon from '@material-ui/icons/ImportExport';
 
 import Button from '@material-ui/core/Button';
@@ -47,13 +47,8 @@ function App() {
   const [launchList, setLaunchList] = useState<LaunchProps[]>([]) //processSpaceXAPI(spaceXTestData));
 
   const [descending, setDescending] = useState(true);
-  const [yearRangeFilter, setYearRangeFilter] = useState("");
-  /*
-  const handleChange = (event: any) => {
-    setYearRangeFilter(event.target.value);
-  };
-  */
- 
+  const [yearRangeFilter, setYearRangeFilter] = useState<null | [Date, Date]>(null);
+
   const reloadData = () => {
     fetch(spaceXAPIEndpoint, { method: "GET" })
       .then(res => res.json())
@@ -83,27 +78,10 @@ function App() {
         <div className="main__launch-list">
           <div className="main__sorting-controls">
 
-            {/*
-            <Select
-              value={yearRangeFilter}
-              onChange={handleChange}
-              displayEmpty
-              className={classes.select}
-            >
-              <MenuItem value="" disabled>
-                Filter by Year
-              </MenuItem>
-              <MenuItem value="0-3000">Any Year</MenuItem>
-              <MenuItem value="2006-2010">2006-2010</MenuItem>
-              <MenuItem value="2010-2015">2010-2015</MenuItem>
-              <MenuItem value="2015-2020">2015-2020</MenuItem>
-              <MenuItem value="2020-3000">Upcoming</MenuItem>
-            </Select>
-*/}
-
+            <FilterDialog setYearFilter={setYearRangeFilter} className={classes.button} />
             <SortButton descending={descending} setDescending={setDescending} className={classes.button} />
           </div>
-          <LaunchList items={launchList} descendingOrder={descending} />
+          <LaunchList items={launchList} descendingOrder={descending} yearRangeFilter={yearRangeFilter} />
         </div>
       </div>
     </div>
