@@ -1,7 +1,8 @@
 import React from 'react';
 import './App.scss';
 
-import { LaunchItem } from './components/LaunchItem';
+import { LaunchProps, LaunchItem } from './components/LaunchItem';
+import { LaunchList } from './components/LaunchList';
 
 import spacexLogo from './assets/spacex-logo.png';
 import launchHome from './assets/img/launch-home.png';
@@ -34,6 +35,21 @@ const useStyles = makeStyles((theme) => ({
     borderBottomRightRadius: '0px',
   },
 }));
+
+let launchList: Array<LaunchProps> = [
+  {
+    number: 1,
+    name: "FalconSat",
+    date: new Date("24 Mar 2006"),
+    ship: "Falcon 1",
+  },
+  {
+    number: 2,
+    name: "FalconSat",
+    date: new Date("24 Mar 2007"),
+    ship: "Falcon 2",
+  }
+];
 
 function App() {
   const classes = useStyles();
@@ -69,15 +85,7 @@ function App() {
               endIcon={<SortIcon />}
             >Sort Descending</Button>
           </div>
-          <ul>
-            <li>
-              <LaunchItem number={1}
-                name="FalconSat"
-                date={new Date("24 Mar 2006")}
-                ship={"Falcon 1"}
-              />
-            </li>
-          </ul>
+          <LaunchList items={launchList} />
         </div>
       </div>
     </div>

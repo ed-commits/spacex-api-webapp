@@ -8,6 +8,8 @@ type LaunchProps = {
     ship: string
 }
 
+export type { LaunchProps };
+
 export const LaunchItem: FunctionComponent<LaunchProps> = ({ number, name, date, ship }) =>
     <div className="item">
         <span className="item__number">#{number}</span>
@@ -21,3 +23,4 @@ export const LaunchItem: FunctionComponent<LaunchProps> = ({ number, name, date,
             <span className="item__ship">{ship}</span>
         </div>
     </div>
+
