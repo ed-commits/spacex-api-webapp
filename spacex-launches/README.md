@@ -2,7 +2,7 @@
 
 Use `npm start` as normal to develop this. And `npm build` to compile it for release.
 
-To run the unit tests use `npx mocha -r ts-node/register src/SpaceXAPI.test.tsx`.
+To run the unit tests use `npm test`.
 
 # Libraries used
 
