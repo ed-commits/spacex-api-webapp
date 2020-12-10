@@ -4,6 +4,7 @@ import './App.scss';
 
 import { LaunchProps, LaunchItem } from './components/LaunchItem';
 import { LaunchList } from './components/LaunchList';
+import { SortButton } from './components/SortButton';
 
 import spacexLogo from './assets/spacex-logo.png';
 import launchHome from './assets/img/launch-home.png';
@@ -45,6 +46,8 @@ function App() {
 
   const [launchList, setLaunchList] = useState<LaunchProps[]>(processSpaceXAPI(spaceXTestData));
 
+  const [descending, setDescending] = useState(true);
+
   return (
     <div className="App">
       <header>
@@ -70,13 +73,9 @@ function App() {
               className={classes.button}
               endIcon={<SelectIcon />}
             >Filter by Year</Button>
-            <Button
-              variant="contained"
-              className={classes.button}
-              endIcon={<SortIcon />}
-            >Sort Descending</Button>
+            <SortButton descending={descending} setDescending={setDescending} className={classes.button} />
           </div>
-          <LaunchList items={launchList} />
+          <LaunchList items={launchList} descendingOrder={descending} />
         </div>
       </div>
     </div>
