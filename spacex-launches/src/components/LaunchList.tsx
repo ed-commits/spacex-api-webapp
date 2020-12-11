@@ -26,7 +26,7 @@ function byDateRange(dateRange : null | [Date, Date]) {
 
 export const LaunchList: FunctionComponent<{ items: Array<LaunchProps>, descendingOrder: boolean, yearRangeFilter: null | [Date, Date] }> = ({ items, descendingOrder, yearRangeFilter }) =>
     <ul>
-        {reverseIf(items, !descendingOrder)
+        {reverseIf(items, descendingOrder)
             .filter(byDateRange(yearRangeFilter))
             .map(item => (
                 <li>

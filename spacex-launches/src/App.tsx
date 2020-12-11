@@ -47,7 +47,7 @@ function App() {
 
   const [launchList, setLaunchList] = useState<LaunchProps[]>([]) //processSpaceXAPI(spaceXTestData));
 
-  const [descending, setDescending] = useState(true);
+  const [descending, setDescending] = useState(false);
   const [yearRangeFilter, setYearRangeFilter] = useState<null | [Date, Date]>(null);
 
   const [inProgress, setInProgress] = useState(false);
