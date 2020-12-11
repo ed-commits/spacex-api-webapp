@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.scss';
 
 import { LaunchProps } from './components/LaunchItem';
@@ -14,6 +14,7 @@ import RefreshIcon from '@material-ui/icons/Replay';
 //import SortIcon from '@material-ui/icons/ImportExport';
 
 import Button from '@material-ui/core/Button';
+import CircularProgress from '@material-ui/core/CircularProgress';
 import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
 
@@ -49,12 +50,21 @@ function App() {
   const [descending, setDescending] = useState(true);
   const [yearRangeFilter, setYearRangeFilter] = useState<null | [Date, Date]>(null);
 
+  const [inProgress, setInProgress] = useState(false);
+
   const reloadData = () => {
+    setInProgress(true);
     fetch(spaceXAPIEndpoint, { method: "GET" })
       .then(res => res.json())
-      .then(res =>
-        setLaunchList(processSpaceXAPI(res)))
+      .then(res => {
+        setInProgress(false);
+        setLaunchList(processSpaceXAPI(res));
+      })
   }
+
+  useEffect(() => {
+    reloadData();
+  }, []);
 
   return (
     <div className="App">
@@ -81,10 +91,15 @@ function App() {
             <FilterDialog setYearFilter={setYearRangeFilter} className={classes.button} />
             <SortButton descending={descending} setDescending={setDescending} className={classes.button} />
           </div>
+          {inProgress
+            ? <div className="launch-list__progress-indicator">
+              <CircularProgress />
+            </div>
+            : <></>}
           <LaunchList items={launchList} descendingOrder={descending} yearRangeFilter={yearRangeFilter} />
         </div>
       </div>
-    </div>
+    </div >
   );
 }
 

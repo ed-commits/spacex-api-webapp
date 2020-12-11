@@ -1,54 +1,54 @@
 $primary-blue: #215184;
 $font-color: #545454;
-$font-family: 'Brandon Grotesque', Arial, Helvetica, sans-serif;
+$font-family: "Brandon Grotesque", Arial, Helvetica, sans-serif;
 
 @font-face {
-  font-family: 'Brandon Grotesque';
-  src: url('assets/font/BrandonGrotesque-Bold.woff2') format('woff2'),
-      url('assets/font/BrandonGrotesque-Bold.woff') format('woff'),
-      url('assets/font/BrandonGrotesque-Bold.ttf') format('truetype');
+  font-family: "Brandon Grotesque";
+  src: url("assets/font/BrandonGrotesque-Bold.woff2") format("woff2"),
+    url("assets/font/BrandonGrotesque-Bold.woff") format("woff"),
+    url("assets/font/BrandonGrotesque-Bold.ttf") format("truetype");
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Brandon Grotesque';
-  src: url('assets/font/BrandonGrotesque-Regular.woff2') format('woff2'),
-      url('assets/font/BrandonGrotesque-Regular.woff') format('woff'),
-      url('assets/font/BrandonGrotesque-Regular.ttf') format('truetype');
+  font-family: "Brandon Grotesque";
+  src: url("assets/font/BrandonGrotesque-Regular.woff2") format("woff2"),
+    url("assets/font/BrandonGrotesque-Regular.woff") format("woff"),
+    url("assets/font/BrandonGrotesque-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Brandon Grotesque';
-  src: url('assets/font/BrandonGrotesque-RegularItalic.woff2') format('woff2'),
-      url('assets/font/BrandonGrotesque-RegularItalic.woff') format('woff'),
-      url('assets/font/BrandonGrotesque-RegularItalic.ttf') format('truetype');
+  font-family: "Brandon Grotesque";
+  src: url("assets/font/BrandonGrotesque-RegularItalic.woff2") format("woff2"),
+    url("assets/font/BrandonGrotesque-RegularItalic.woff") format("woff"),
+    url("assets/font/BrandonGrotesque-RegularItalic.ttf") format("truetype");
   font-weight: normal;
   font-style: italic;
 }
 
 @font-face {
-  font-family: 'Brandon Grotesque';
-  src: url('assets/font/BrandonGrotesque-Black.woff2') format('woff2'),
-      url('assets/font/BrandonGrotesque-Black.woff') format('woff'),
-      url('assets/font/BrandonGrotesque-Black.ttf') format('truetype');
+  font-family: "Brandon Grotesque";
+  src: url("assets/font/BrandonGrotesque-Black.woff2") format("woff2"),
+    url("assets/font/BrandonGrotesque-Black.woff") format("woff"),
+    url("assets/font/BrandonGrotesque-Black.ttf") format("truetype");
   font-weight: 900;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'Brandon Grotesque';
-  src: url('assets/font/BrandonGrotesque-Medium.woff2') format('woff2'),
-      url('assets/font/BrandonGrotesque-Medium.woff') format('woff'),
-      url('assets/font/BrandonGrotesque-Medium.ttf') format('truetype');
+  font-family: "Brandon Grotesque";
+  src: url("assets/font/BrandonGrotesque-Medium.woff2") format("woff2"),
+    url("assets/font/BrandonGrotesque-Medium.woff") format("woff"),
+    url("assets/font/BrandonGrotesque-Medium.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
 }
 
 body {
-  font-family: 'Brandon Grotesque', Arial, Helvetica, sans-serif;
+  font-family: "Brandon Grotesque", Arial, Helvetica, sans-serif;
   color: #545454;
 
   margin-left: 0px;
@@ -72,7 +72,7 @@ img.header-bar__logo {
 }
 
 span.header-bar__label {
-  font-family: 'Brandon Grotesque', Arial, Helvetica, sans-serif;
+  font-family: "Brandon Grotesque", Arial, Helvetica, sans-serif;
   font-size: 0.8em;
 }
 
@@ -124,11 +124,11 @@ ul {
 
 .item {
   background-color: white;
-  
+
   padding: 18px;
   margin: 8px;
   border-radius: 5px;
-  box-shadow: 3px 2px 13px 0px rgba(0,0,0,0.3);
+  box-shadow: 3px 2px 13px 0px rgba(0, 0, 0, 0.3);
 
   overflow: auto;
 }
@@ -162,4 +162,11 @@ ul {
 .item__ship {
   font-weight: bold;
   font-size: 1.1em;
+}
+
+.launch-list__progress-indicator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 22px;
 }
