@@ -1,6 +1,6 @@
 # Running and Building the project
 
-Use `npm start` as normal to develop this. And `npm build` to compile it for release.
+Use `npm start` as normal to develop this. And `npm run build` to compile it for release.
 
 To run the unit tests use `npm test`.
 
